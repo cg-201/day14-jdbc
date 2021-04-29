@@ -28,5 +28,9 @@ dependencies {
     
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.20'
+	
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+	implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.30.Final'
+	
     
 }
