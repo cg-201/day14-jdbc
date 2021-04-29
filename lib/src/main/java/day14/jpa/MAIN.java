@@ -12,9 +12,11 @@ public class MAIN {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("myjpa");
 		EntityManager em = factory.createEntityManager();
 		
-		// Creating Object 
+		// Creating Object  :: dbinfo
 		Employee employee =new Employee(1, "rahul", "rahul@gmail.com", "12122", 23233);
+		em.getTransaction().begin();
 		em.persist(employee); // add the record into database
+		em.getTransaction().commit();
 		
 		System.out.println("Record Added!!");
 	}
