@@ -1,9 +1,12 @@
 package day14.jpa;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "emp")
 public class Employee {
 	// members
 	@Id
@@ -12,6 +15,21 @@ public class Employee {
 	String email;
 	String mobile;
 	int salary;
+	LocalDate dob;
+	public LocalDate getDob() {
+		return dob;
+	}
+
+
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
+
+
+	LocalDateTime timestamp;
+	boolean active;
 	
 	
 
@@ -21,13 +39,39 @@ public class Employee {
 
 	
 	
-	public Employee(int id, String name, String email, String mobile, int salary) {
+	public Employee(int id, String name, String email, String mobile, int salary, boolean active, LocalDateTime timestamp) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.mobile = mobile;
 		this.salary = salary;
+		this.timestamp = timestamp;
+		this.active = active;
+	}
+
+
+
+	public boolean isActive() {
+		return active;
+	}
+
+
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+
+
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+
+
+
+	public void setTimestamp(LocalDateTime timestamp) {
+		this.timestamp = timestamp;
 	}
 
 
